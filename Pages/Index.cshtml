@@ -1,0 +1,639 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Auto Appraisal Perfected";
+}
+
+@if (Model.report.client.customer_name != null)
+{
+<form>
+    <!--Header-->
+    <header>
+        <div class="default-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-md-2">
+                        <div class="logo"> <a href="index.html"><img height="50" src="img/logo.png" alt="image" /></a> </div>
+                    </div>
+                    <div class="col-sm-9 col-md-10">
+                        <div class="header_info">
+                            <div class="header_widgets">
+                                <div class="circle_icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                <p class="uppercase_text">For Support Mail us : </p>
+                                <a href="mailto:corey@aaperfected.com">corey@aaperfected.com</a>
+                            </div>
+                            <div class="header_widgets">
+                                <div class="circle_icon"> <i class="fa fa-phone" aria-hidden="true"></i> </div>
+                                <p class="uppercase_text">Service. Call Us: </p>
+                                <a href="tel:404-454-1265">404-454-1265</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav id="navigation_bar" class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                </div>
+                <div class="header_wrap">
+                    &nbsp;
+                </div>
+                <div class="collapse navbar-collapse" id="navigation">
+                    &nbsp;
+                </div>
+            </div>
+        </nav>
+        <!-- Navigation end -->
+
+    </header>
+    <!-- /Header -->
+
+    <section class="listing_other_info secondary-bg">
+        <div class="container">
+            &nbsp;
+        </div>
+    </section>
+
+    <!--Listing-detail-->
+    <section class="listing-detail">
+        <div class="container">
+            <div class="listing_detail_head row">
+                <div class="col-md-9">
+                    @if (Model.report.basicInfo.model != null)
+                    {
+                        <h2>@Model.report.basicInfo.make @Model.report.basicInfo.model </h2>
+                    }
+                    <h3>@Model.report.client.customer_name</h3>
+                    @if (Model.report.basicInfo.vin != null)
+                    {
+                        <h2>VIN: @Model.report.basicInfo.vin.ToUpper() </h2>
+                    }
+                    <div class="car-location">
+                        <span>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            @if (Model.report.basicInfo.location != null)
+                            {
+                                @Model.report.basicInfo.location
+                            }
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="price_info">
+                        @if (Model.report.signature.fairmarketvalue != null)
+                        {
+                            <p>$@Model.report.signature.fairmarketvalue</p>
+                        }
+                    </div>
+                    <p>Market Value Determination</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="main_features">
+                        <ul>
+                            <li>
+                                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                                @if (Model.report.basicInfo.mileage != null)
+                                {
+                                    <h5>@Model.report.basicInfo.mileage</h5>
+                                }
+                                <p>Total Miles</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                @if (Model.report.basicInfo.year != null)
+                                {
+                                    <h5>@Model.report.basicInfo.year</h5>
+                                }
+                                <p>Year</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-cogs" aria-hidden="true"></i>
+                                <h5>Diesel</h5>
+                                <p>Fuel Type</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-power-off" aria-hidden="true"></i>
+                                @if (Model.report.transmission.transmission_type != null)
+                                {
+                                    <h5>@Model.report.transmission.transmission_type</h5>
+                                }
+                                <p>Transmission</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-superpowers" aria-hidden="true"></i>
+                                <h5>153KW</h5>
+                                <p>Engine</p>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="listing_more_info">
+                        <div class="listing_detail_wrap">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs gray-bg" role="tablist">
+                                <li role="presentation"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" data-toggle="tab">Vehicle Data </a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="similar_cars">
+                                <div class="row">
+                                    <div class="col-md-12 grid_listing">
+                                        <div role="tabpanel" class="tab-pane" id="specification">
+                                            <div class="table-responsive">
+                                                <!--Basic-Info-Table-->
+                                                @if (Model.VinDecoded.Count >= 1)
+                                                {
+                                                    <table>
+                                                        <tbody>
+                                                            @foreach (var item in Model.VinDecoded.Results)
+                                                            {
+                                                                @if (@item.Value != null)
+                                                                {
+                                                                    <tr>
+                                                                        <td> @item.Variable </td>
+                                                                        <td> @item.Value </td>
+                                                                    </tr>
+                                                                }
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Vehicle-Video-->
+
+                    </div>
+
+                    <div class="listing_more_info">
+                        <div class="listing_detail_wrap">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs gray-bg" role="tablist">
+                                <li role="presentation"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" data-toggle="tab">Comments </a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <!-- vehicle-overview -->
+                                @if (Model.report.photos != null && Model.report.photos.Count >= 1)
+                                {
+                                    <img width="250" src="@Model.report.photos[0].photo" />
+                                }
+
+                                <div role="tabpanel" class="tab-pane active" id="vehicle-overview">
+                                    <h4>Test Drive Comments</h4>
+                                    <p>
+                                        @if (Model.report.comments != null && Model.report.comments.testdrive_comment != string.Empty)
+                                        {
+                                            @Model.report.comments.testdrive_comment
+                                        }
+                                    </p>
+
+                                    <h4>Engine Comments</h4>
+                                    <p>
+                                        @if (Model.report.comments != null && Model.report.comments.engine_comment != string.Empty)
+                                        {
+                                            @Model.report.comments.engine_comment
+                                        }
+                                    </p>
+
+                                    <h4>Transmission Comments</h4>
+                                    <p>
+                                        @if (Model.report.comments != null && Model.report.comments.engine_comment != string.Empty)
+                                        {
+                                            @Model.report.comments.transmission_comment
+                                        }
+                                    </p>
+
+                                    <h4>Steering Comments</h4>
+                                    <p>
+                                        @if (Model.report.comments != null && Model.report.comments.engine_comment != string.Empty)
+                                        {
+                                            @Model.report.comments.steering_comment
+                                        }
+                                    </p>
+
+                                    <h4>Brakes Comments</h4>
+                                    <p>
+                                        @if (Model.report.comments != null && Model.report.comments.engine_comment != string.Empty)
+                                        {
+                                            @Model.report.comments.brake_comment
+                                        }
+                                    </p>
+
+                                    <h4>Rear End Comments</h4>
+                                    <p>
+                                        @if (Model.report.comments != null && Model.report.comments.engine_comment != string.Empty)
+                                        {
+                                            @Model.report.comments.rearend_comment
+                                        }
+                                    </p>
+                                </div>
+
+                                <!-- Technical-Specification -->
+                                <div role="tabpanel" class="tab-pane" id="specification">
+                                    <div class="table-responsive">
+                                        <!--Basic-Info-Table-->
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">BASIC INFO</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Model Year</td>
+                                                    @if (Model.report.basicInfo.year != null)
+                                                    {
+                                                        <td>@Model.report.basicInfo.year</td>
+                                                    }
+                                                </tr>
+                                                <tr>
+                                                    <td>No. of Owners</td>
+                                                    <td>4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>KMs Driven</td>
+                                                    <td>30,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fuel Type</td>
+                                                    <td>Gas</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <!--Technical-Specification-Table-->
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">Technical Specification</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Engine Type</td>
+                                                    <td>TDCI Diesel Engine</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Engine Description</td>
+                                                    <td>1.5KW</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>No. of Cylinders</td>
+                                                    <td>4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mileage-City</td>
+                                                    <td>22.4kmpl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mileage-Highway</td>
+                                                    <td>25.83kmpl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fuel Tank Capacity</td>
+                                                    <td>40 (Liters)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Seating Capacity</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Transmission Type</td>
+                                                    <td>Manual</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Accessories -->
+                                <div role="tabpanel" class="tab-pane" id="accessories">
+                                    <!--Accessories-->
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Accessories</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Air Conditioner</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>AntiLock Braking System</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Power Steering</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Power Windows</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CD Player</td>
+                                                <td><i class="fa fa-close" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Leather Seats</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Central Locking</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Power Door Locks</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Brake Assist</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Driver Airbag</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Passenger Airbag</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Crash Sensor</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Engine Check Warning</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Automatic Headlamps</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Vehicle-Video-->
+
+                    </div>
+
+                </div>
+
+                <!--Side-Bar-->
+                <aside class="col-md-3">
+                    <div class="sidebar_widget">
+                        <div class="widget_heading">
+                            <h5><i class="fa fa-calculator" aria-hidden="true"></i> Vehicle Details </h5>
+                        </div>
+                        <div class="financing_calculatoe">
+                            <div class="form-group">
+                                <label class="form-label">Market Value Determination ($)</label><br />$
+                                @if (Model.report.signature.fairmarketvalue != null)
+                                {
+                                    @Model.report.signature.fairmarketvalue
+                                }
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Year</label><br />
+                                @if (Model.report.basicInfo.year != null)
+                                {
+                                    @Model.report.basicInfo.year
+                                }
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Make</label><br />
+                                @if (Model.report.basicInfo.make != null)
+                                {
+                                    @Model.report.basicInfo.make
+                                }
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Model</label><br />
+                                @if (Model.report.basicInfo.model != null)
+                                {
+                                    @Model.report.basicInfo.model
+                                }
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Color</label>
+                                <br />
+                                @if (Model.report.basicInfo.color != null)
+                                {
+                                    @Model.report.basicInfo.color
+                                }
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">VIN</label>
+                                <br />
+                                @Model.report.basicInfo.vin.ToUpper()
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sidebar_widget">
+                        <div class="widget_heading">
+                            <h5><i class="fa fa-address-card-o" aria-hidden="true"></i> Appraiser Info </h5>
+                        </div>
+                        <div class="dealer_detail">
+                            <p><span>Name:</span> Corey Lamar</p>
+                            <p><span>Email:</span> corey@aaperfected.com</p>
+                            <p><span>Phone:</span> 404-454-1265</p>
+                        </div>
+                    </div>
+                </aside>
+                <!--/Side-Bar-->
+            </div>
+
+            <div class="space-20"></div>
+            <div class="divider"></div>
+
+            <!--Similar-Cars-->
+            <div class="similar_cars">
+                <h3>Hagerty</h3>
+                <div class="row">
+                    <div class="col-md-12 grid_listing">
+                        <div role="tabpanel" class="tab-pane" id="specification">
+                            <div class="table-responsive">
+                                <!--Basic-Info-Table-->
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Hagerty</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Concours</td>
+                                            <td>$18,400</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Excellent</td>
+                                            <td>$7,600</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Good</td>
+                                            <td>$5,400</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fair</td>
+                                            <td>$3,100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Similar-Cars-->
+            <!--Similar-Cars-->
+            <div class="similar_cars">
+                <h3>KBB</h3>
+                <div class="row">
+                    &nbsp;
+                </div>
+            </div>
+            <!--/Similar-Cars-->
+            <!--Similar-Cars-->
+            <div class="similar_cars">
+                <h3>Certificate</h3>
+                <div class="row">
+                    <div class="col-md-12 grid_listing">
+                        <div class="product-listing-m gray-bg">
+                            <div class="product-listing-img">
+                                <a href="#"><img src="img/appraisal-certificate.png" class="img-responsive" alt="image" /> </a>
+                                &nbsp;
+                            </div>
+                            <div class="product-listing-content">
+                                <h5><a href="#">Certified Appraiser</a></h5>
+                                <p class="list-price">License #: 107748</p>
+                                <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Atlanta, USA</span></div>
+                                <ul class="features_list">
+                                    <li>&nbsp;</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Similar-Cars-->
+
+        </div>
+    </section>
+    <!--/Listing-detail-->
+    <!--Brands-->
+    <section class="brand-section gray-bg">
+        <div class="container">
+            <div class="brand-hadding">
+                <h5>Photos</h5>
+            </div>
+            <div class="brand-logo-list">
+                <div id="popular_brands">
+                    <div>
+                        <a href="#">
+                            @if (Model.report.photos != null && Model.report.photos.Count >= 2)
+                            {
+                                <img height="100" src="@Model.report.photos[1].photo" class="img-responsive" alt="image" />
+                            }
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            @if (Model.report.photos != null && Model.report.photos.Count >= 3)
+                            {
+                                <img height="100" src="@Model.report.photos[2].photo" class="img-responsive" alt="image" />
+                            }
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            @if (Model.report.photos != null && Model.report.photos.Count >= 4)
+                            {
+                                <img height="100" src="@Model.report.photos[3].photo" class="img-responsive" alt="image" />
+                            }
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            @if (Model.report.photos != null && Model.report.photos.Count >= 5)
+                            {
+                                <img height="100" src="@Model.report.photos[4].photo" class="img-responsive" alt="image" />
+                            }
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            @if (Model.report.photos != null && Model.report.photos.Count >= 6)
+                            {
+                                <img height="100" src="@Model.report.photos[5].photo" class="img-responsive" alt="image" />
+                            }
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            @if (Model.report.photos != null && Model.report.photos.Count >= 7)
+                            {
+                                <img height="100" src="@Model.report.photos[6].photo" class="img-responsive" alt="image" />
+                            }
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            @if (Model.report.photos != null && Model.report.photos.Count >= 8)
+                            {
+                                <img height="100" src="@Model.report.photos[7].photo" class="img-responsive" alt="image" />
+                            }
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Brands-->
+    <!--Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    Address the needs of stated value for automobiles while retaining the integrity of our license and the quality of our work.
+                    <br />WE THANK YOU FOR YOUR TRUST.
+                    <br />
+                    This valuation report has been specially prepared for @Model.report.client.customer_name by Certified Master Appraiser Corey Lamar
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-push-6 text-right">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-6 col-md-pull-6">
+                        <p class="copy-right">Copyright &copy; @System.DateTime.Now.Year.ToString() Auto Appraisals Perfected. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /Footer-->
+</form>
+}

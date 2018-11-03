@@ -1,0 +1,227 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="MySql.Data" Version="8.0.13" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\" />
+    <Folder Include="wwwroot\assets\images\" />
+    <Folder Include="Models\" />
+    <Folder Include="DB\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\assets\js\bootstrap-slider.js" />
+    <Content Remove="wwwroot\assets\js\bootstrap-slider.min.js" />
+    <Content Remove="wwwroot\assets\js\bootstrap.js" />
+    <Content Remove="wwwroot\assets\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\assets\js\countdown_date.js" />
+    <Content Remove="wwwroot\assets\js\interface.js" />
+    <Content Remove="wwwroot\assets\js\jquery.countdown.min.js" />
+    <Content Remove="wwwroot\assets\js\jquery.js" />
+    <Content Remove="wwwroot\assets\js\jquery.min.js" />
+    <Content Remove="wwwroot\assets\js\owl.carousel.js" />
+    <Content Remove="wwwroot\assets\js\owl.carousel.min.js" />
+    <Content Remove="wwwroot\assets\js\slick.min.js" />
+    <Content Remove="wwwroot\assets\images\100x60.png" />
+    <Content Remove="wwwroot\assets\images\1920x250.jpg" />
+    <Content Remove="wwwroot\assets\images\1920x400.jpg" />
+    <Content Remove="wwwroot\assets\images\1920x830.jpg" />
+    <Content Remove="wwwroot\assets\images\200x200.jpg" />
+    <Content Remove="wwwroot\assets\images\220x220.jpg" />
+    <Content Remove="wwwroot\assets\images\222x172.jpg" />
+    <Content Remove="wwwroot\assets\images\300x300.jpg" />
+    <Content Remove="wwwroot\assets\images\346x224.png" />
+    <Content Remove="wwwroot\assets\images\600x380.jpg" />
+    <Content Remove="wwwroot\assets\images\600x380_2.jpg" />
+    <Content Remove="wwwroot\assets\images\700x450.jpg" />
+    <Content Remove="wwwroot\assets\images\755x430.png" />
+    <Content Remove="wwwroot\assets\images\850x500.jpg" />
+    <Content Remove="wwwroot\assets\images\900x560.jpg" />
+    <Content Remove="wwwroot\assets\images\900x560_2.jpg" />
+    <Content Remove="wwwroot\assets\images\90x90.jpg" />
+    <Content Remove="wwwroot\assets\images\960x870.jpg" />
+    <Content Remove="wwwroot\assets\images\addmore_img.png" />
+    <Content Remove="wwwroot\assets\images\change_logo.png" />
+    <Content Remove="wwwroot\assets\images\favicon-icon\apple-touch-icon-144-precomposed.png" />
+    <Content Remove="wwwroot\assets\images\favicon-icon\apple-touch-icon-57-precomposed.png" />
+    <Content Remove="wwwroot\assets\images\favicon-icon\apple-touch-icon-72-precomposed.png" />
+    <Content Remove="wwwroot\assets\images\favicon-icon\favicon.png" />
+    <Content Remove="wwwroot\assets\images\logo.png" />
+    <Content Remove="wwwroot\assets\fonts\FontAwesome.otf" />
+    <Content Remove="wwwroot\assets\fonts\fontawesome-webfont.eot" />
+    <Content Remove="wwwroot\assets\fonts\fontawesome-webfont.svg" />
+    <Content Remove="wwwroot\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Remove="wwwroot\assets\fonts\fontawesome-webfont.woff" />
+    <Content Remove="wwwroot\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Remove="wwwroot\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Remove="wwwroot\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Remove="wwwroot\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Remove="wwwroot\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Remove="wwwroot\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Remove="wwwroot\assets\css\bootstrap-slider.css" />
+    <Content Remove="wwwroot\assets\css\bootstrap-slider.min.css" />
+    <Content Remove="wwwroot\assets\css\bootstrap.css" />
+    <Content Remove="wwwroot\assets\css\bootstrap.min.css" />
+    <Content Remove="wwwroot\assets\css\font-awesome.css" />
+    <Content Remove="wwwroot\assets\css\font-awesome.min.css" />
+    <Content Remove="wwwroot\assets\css\owl.carousel.css" />
+    <Content Remove="wwwroot\assets\css\owl.transitions.css" />
+    <Content Remove="wwwroot\assets\css\slick.css" />
+    <Content Remove="wwwroot\assets\css\style.css" />
+    <Content Remove="wwwroot\img\appraisal-certificate.png" />
+    <Content Remove="wwwroot\img\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\assets\js\bootstrap-slider.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\bootstrap-slider.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\bootstrap.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\bootstrap.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\countdown_date.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\interface.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\jquery.countdown.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\jquery.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\jquery.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\owl.carousel.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\owl.carousel.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\js\slick.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\images\100x60.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\images\1920x250.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\images\1920x400.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\images\1920x830.jpg" />
+    <None Include="wwwroot\assets\images\200x200.jpg" />
+    <None Include="wwwroot\assets\images\220x220.jpg" />
+    <None Include="wwwroot\assets\images\222x172.jpg" />
+    <None Include="wwwroot\assets\images\300x300.jpg" />
+    <None Include="wwwroot\assets\images\346x224.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\images\600x380.jpg" />
+    <None Include="wwwroot\assets\images\600x380_2.jpg" />
+    <None Include="wwwroot\assets\images\700x450.jpg" />
+    <None Include="wwwroot\assets\images\755x430.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\images\850x500.jpg" />
+    <None Include="wwwroot\assets\images\900x560.jpg" />
+    <None Include="wwwroot\assets\images\900x560_2.jpg" />
+    <None Include="wwwroot\assets\images\90x90.jpg" />
+    <None Include="wwwroot\assets\images\960x870.jpg" />
+    <None Include="wwwroot\assets\images\addmore_img.png" />
+    <None Include="wwwroot\assets\images\change_logo.png" />
+    <None Include="wwwroot\assets\images\favicon-icon\apple-touch-icon-144-precomposed.png" />
+    <None Include="wwwroot\assets\images\favicon-icon\apple-touch-icon-57-precomposed.png" />
+    <None Include="wwwroot\assets\images\favicon-icon\apple-touch-icon-72-precomposed.png" />
+    <None Include="wwwroot\assets\images\favicon-icon\favicon.png" />
+    <None Include="wwwroot\assets\images\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\FontAwesome.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\css\bootstrap-slider.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\css\bootstrap-slider.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\css\bootstrap.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\css\bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\css\font-awesome.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\css\font-awesome.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\css\owl.carousel.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\css\owl.transitions.css" />
+    <None Include="wwwroot\assets\css\slick.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\css\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\img\appraisal-certificate.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\img\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\HelperResult.cs" />
+  </ItemGroup>
+</Project>
