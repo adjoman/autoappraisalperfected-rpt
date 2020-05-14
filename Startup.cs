@@ -32,8 +32,9 @@ namespace testAAP
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            //services.AddRazorPages();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.Add(new ServiceDescriptor(typeof(AppraisalsContext), new AppraisalsContext(Configuration.GetConnectionString("DefaultConnection"))));
         }
@@ -54,6 +55,7 @@ namespace testAAP
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
 
             app.UseMvc();
         }
