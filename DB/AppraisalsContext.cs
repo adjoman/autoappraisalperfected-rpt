@@ -50,7 +50,7 @@ namespace testAAP.DB
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT vehicle_photos_photoname as photo FROM vehicle_photos where vehicle_photos_customer_id='" + clientID + "'", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT vehicle_photos_photoname as photo FROM vehicle_photos where vehicle_photos_customer_id='" + clientID + "' and vehicle_photos_isdeleted=0", conn);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
