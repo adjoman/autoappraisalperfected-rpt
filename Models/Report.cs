@@ -13,8 +13,12 @@ namespace testAAP.Models
             signature       = new Signature();
             comments        = new Comment();
             transmission    = new Transmission();
+            testDrive       = new TestDrive();
+            engine          = new Engine();
         }
 
+        public Engine engine { get; set; }
+        public TestDrive testDrive { get; set; }
         public BasicInfo basicInfo { get; set; }
         public Client client { get; set; }
         public Signature signature { get; set; }

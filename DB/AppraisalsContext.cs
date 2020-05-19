@@ -103,6 +103,37 @@ namespace testAAP.DB
                         }
                     }
 
+                    // test drive
+                    list.testDrive.testdrive_comment = MySQLDBExtension.GetStringSafe(reader, "testdrive_comment");
+                    list.testDrive.bouce_test = MySQLDBExtension.GetStringSafe(reader, "bounce_test");
+                    list.testDrive.suspension_noise = MySQLDBExtension.GetStringSafe(reader, "suspension_noise");
+
+                    // engine 
+                    list.engine.engine_comment = MySQLDBExtension.GetStringSafe(reader, "engine_comment");
+                    list.engine.engine_size = MySQLDBExtension.GetStringSafe(reader, "engine_size");
+                    list.engine.engine_performance = MySQLDBExtension.GetStringSafe(reader, "engine_performance");
+
+                    var oilLevel = MySQLDBExtension.GetStringSafe(reader, "oil_level_quality");
+                    if (!string.IsNullOrEmpty(transType))
+                    {
+                        if (transType == "0")
+                        {
+                            list.engine.oil_level_quality = "Excellent";
+                        }
+                        else if ( transType == "1")
+                        {
+                            list.engine.oil_level_quality = "Good";
+                        }
+                        else if (transType == "2")
+                        {
+                            list.engine.oil_level_quality = "Fair";
+                        }
+                        else if (transType == "3")
+                        {
+                            list.engine.oil_level_quality = "Poor";
+                        }
+                    }
+
                     list.signature.fairmarketvalue  = MySQLDBExtension.GetStringSafe(reader, "fairmarketvalue");
                     list.client.customer_name       = MySQLDBExtension.GetStringSafe(reader, "customer_name");
                     list.comments.testdrive_comment = MySQLDBExtension.GetStringSafe(reader, "testdrive_comment");

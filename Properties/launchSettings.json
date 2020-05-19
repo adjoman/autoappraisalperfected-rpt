@@ -26,6 +26,7 @@
     "AutoAppraisalPerfectedReport": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "http://localhost:5000/?id=9d4854a9-4bfb-4484-8c68-85a7cefa4dda",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

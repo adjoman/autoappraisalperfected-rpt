@@ -168,6 +168,90 @@
                         <div class="listing_detail_wrap">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs gray-bg" role="tablist">
+                                <li role="presentation"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" data-toggle="tab">Engine </a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="vehicle-overview">
+                                    <h4>Engine Size</h4>
+                                    <p>
+                                        @if (Model.report.engine.engine_size != null && Model.report.engine.engine_size != string.Empty)
+                                        {
+                                            @Model.report.engine.engine_size
+                                        }
+                                    </p>
+
+                                    <h4>Engine Performance</h4>
+                                    <p>
+                                        @if (Model.report.engine.engine_performance != null && Model.report.engine.engine_performance != string.Empty)
+                                        {
+                                            @Model.report.engine.engine_performance
+                                        }
+                                    </p>
+
+                                    <h4>Oil Level Quality</h4>
+                                    <p>
+                                        @if (Model.report.engine.oil_level_quality != null && Model.report.engine.oil_level_quality != string.Empty)
+                                        {
+                                            @Model.report.engine.oil_level_quality
+                                        }
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Vehicle-Video-->
+
+                    </div>
+
+                    <div class="listing_more_info">
+                        <div class="listing_detail_wrap">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs gray-bg" role="tablist">
+                                <li role="presentation"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" data-toggle="tab">Test Drive </a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="vehicle-overview">
+                                    <h4>Test Drive Comments</h4>
+                                    <p>
+                                        @if (Model.report.testDrive.testdrive_comment != null && Model.report.testDrive.testdrive_comment != string.Empty)
+                                        {
+                                            @Model.report.testDrive.testdrive_comment
+                                        }
+                                    </p>
+
+                                    <h4>Bounce Test</h4>
+                                    <p>
+                                        @if (Model.report.testDrive.bouce_test != null && Model.report.testDrive.bouce_test != string.Empty)
+                                        {
+                                            @Model.report.testDrive.bouce_test
+                                        }
+                                    </p>
+
+                                    <h4>Suspension Notes</h4>
+                                    <p>
+                                        @if (Model.report.testDrive.suspension_noise != null && Model.report.testDrive.suspension_noise != string.Empty)
+                                        {
+                                            @Model.report.testDrive.suspension_noise
+                                        }
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Vehicle-Video-->
+
+                    </div>
+
+                    <div class="listing_more_info">
+                        <div class="listing_detail_wrap">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs gray-bg" role="tablist">
                                 <li role="presentation"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" data-toggle="tab">Comments </a></li>
                             </ul>
 
