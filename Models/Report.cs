@@ -15,8 +15,10 @@ namespace testAAP.Models
             transmission    = new Transmission();
             testDrive       = new TestDrive();
             engine          = new Engine();
+            source          = new Sources();
         }
 
+        public Sources source { get; set; }
         public Engine engine { get; set; }
         public TestDrive testDrive { get; set; }
         public BasicInfo basicInfo { get; set; }

@@ -135,6 +135,12 @@ namespace testAAP.DB
                         }
                     }
 
+                    // sources 
+                    list.source.vehicle_sources_comment = MySQLDBExtension.GetStringSafe(reader, "vehicle_sources_comment");
+                    list.source.vehicle_sources_haggerty = MySQLDBExtension.GetStringSafe(reader, "vehicle_sources_haggerty");
+                    list.source.vehicle_sources_kbb = MySQLDBExtension.GetStringSafe(reader, "vehicle_sources_kbb");
+                    list.source.vehicle_sources_nada = MySQLDBExtension.GetStringSafe(reader, "vehicle_sources_nada");
+
                     list.signature.fairmarketvalue  = MySQLDBExtension.GetStringSafe(reader, "fairmarketvalue");
                     list.client.customer_name       = MySQLDBExtension.GetStringSafe(reader, "customer_name");
                     list.comments.testdrive_comment = MySQLDBExtension.GetStringSafe(reader, "testdrive_comment");

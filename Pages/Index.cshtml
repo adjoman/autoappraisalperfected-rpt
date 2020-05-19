@@ -206,6 +206,7 @@
 
                     </div>
 
+                    <!-- Engine-->
                     <div class="listing_more_info">
                         <div class="listing_detail_wrap">
                             <!-- Nav tabs -->
@@ -247,7 +248,8 @@
                         <!--Vehicle-Video-->
 
                     </div>
-
+                    <!-- End of Engine-->
+                    <!-- Transmission-->
                     <div class="listing_more_info">
                         <div class="listing_detail_wrap">
                             <!-- Nav tabs -->
@@ -281,6 +283,59 @@
                         <!--Vehicle-Video-->
 
                     </div>
+                    <!-- End of Transmission-->
+
+                    <!-- Sources-->
+                    <div class="listing_more_info">
+                        <div class="listing_detail_wrap">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs gray-bg" role="tablist">
+                                <li role="presentation"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" data-toggle="tab">Sources </a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="vehicle-overview">
+                                    <h4>Nada</h4>
+                                    <p>
+                                        @if (Model.report.source != null && Model.report.source.vehicle_sources_nada != string.Empty)
+                                        {
+                                            @Model.report.source.vehicle_sources_nada
+                                        }
+                                    </p>
+
+                                    <h4>KBB URL</h4>
+                                    <p>
+                                        @if (Model.report.source.vehicle_sources_kbb != null && Model.report.source.vehicle_sources_kbb != string.Empty)
+                                        {
+                                            @Model.report.source.vehicle_sources_kbb
+                                        }
+                                    </p>
+
+                                    <h4>Haggerty</h4>
+                                    <p>
+                                        @if (Model.report.source.vehicle_sources_haggerty != null && Model.report.source.vehicle_sources_haggerty != string.Empty)
+                                        {
+                                            @Model.report.source.vehicle_sources_haggerty
+                                        }
+                                    </p>
+
+                                    <h4>Sources Comment</h4>
+                                    <p>
+                                        @if (Model.report.source.vehicle_sources_comment != null && Model.report.source.vehicle_sources_comment != string.Empty)
+                                        {
+                                            @Model.report.source.vehicle_sources_comment
+                                        }
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Vehicle-Video-->
+
+                    </div>
+                    <!-- End of Sources-->
 
                     <div class="listing_more_info">
                         <div class="listing_detail_wrap">
