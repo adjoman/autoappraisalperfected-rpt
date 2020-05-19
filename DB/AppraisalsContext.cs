@@ -90,6 +90,7 @@ namespace testAAP.DB
                     list.basicInfo.mileage  = MySQLDBExtension.GetStringSafe(reader, "mileage");
                     list.basicInfo.location = MySQLDBExtension.GetStringSafe(reader, "location");
 
+                    list.comments.transmission_comment = MySQLDBExtension.GetStringSafe(reader, "transmission_comments");
                     var transType = MySQLDBExtension.GetStringSafe(reader, "transmission_type");
                     if (!string.IsNullOrEmpty(transType))
                     {
@@ -138,7 +139,7 @@ namespace testAAP.DB
                     list.client.customer_name       = MySQLDBExtension.GetStringSafe(reader, "customer_name");
                     list.comments.testdrive_comment = MySQLDBExtension.GetStringSafe(reader, "testdrive_comment");
                     list.comments.engine_comment    = MySQLDBExtension.GetStringSafe(reader, "engine_comment");
-                    list.comments.transmission_comment = MySQLDBExtension.GetStringSafe(reader, "transmission_comments");
+                    
                     list.comments.steering_comment = MySQLDBExtension.GetStringSafe(reader, "steering_comments");
                     list.comments.brake_comment = MySQLDBExtension.GetStringSafe(reader, "brakes_comments");
                     list.comments.rearend_comment = MySQLDBExtension.GetStringSafe(reader, "rearend_comments");
