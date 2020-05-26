@@ -164,6 +164,7 @@
                         <!--Vehicle-Video-->
                     </div>
 
+                    <!-- Test Drive -->
                     <div class="listing_more_info">
                         <div class="listing_detail_wrap">
                             <!-- Nav tabs -->
@@ -201,11 +202,9 @@
                                 </div>
                             </div>
                         </div>
-
                         <!--Vehicle-Video-->
-
                     </div>
-
+                    <!-- End of Test Drive-->
                     <!-- Engine-->
                     <div class="listing_more_info">
                         <div class="listing_detail_wrap">
@@ -279,12 +278,9 @@
                                 </div>
                             </div>
                         </div>
-
                         <!--Vehicle-Video-->
-
                     </div>
                     <!-- End of Transmission-->
-
                     <!-- Sources-->
                     <div class="listing_more_info">
                         <div class="listing_detail_wrap">
@@ -336,7 +332,7 @@
 
                     </div>
                     <!-- End of Sources-->
-
+                    <!-- Comments-->
                     <div class="listing_more_info">
                         <div class="listing_detail_wrap">
                             <!-- Nav tabs -->
@@ -347,11 +343,6 @@
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <!-- vehicle-overview -->
-                                @if (Model.report.photos != null && Model.report.photos.Count >= 1)
-                                {
-                                    <img width="250" src="@Model.report.photos[0].photo" />
-                                }
-
                                 <div role="tabpanel" class="tab-pane active" id="vehicle-overview">
                                     <h4>Test Drive Comments</h4>
                                     <p>
@@ -555,7 +546,186 @@
                         <!--Vehicle-Video-->
 
                     </div>
+                    <!-- End of Comments-->
 
+                    <!-- Pictures-->
+                    <div class="listing_more_info">
+                        <div class="listing_detail_wrap">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs gray-bg" role="tablist">
+                                <li role="presentation"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" data-toggle="tab">Vehicle Photos </a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <!-- vehicle-overview -->
+                                <div role="tabpanel" class="tab-pane active" id="vehicle-overview">
+                                    <p>
+                                        @if (Model.report.photos != null)
+                                        {
+                                            @foreach (var item in Model.report.photos)
+                                            {
+                                                <img height="100" src="@item.photo" class="img-responsive" alt="image" />
+                                                <br />
+                                            }
+                                        }
+                                    </p>                                    
+                                </div>
+
+                                <!-- Technical-Specification -->
+                                <div role="tabpanel" class="tab-pane" id="specification">
+                                    <div class="table-responsive">
+                                        <!--Basic-Info-Table-->
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">BASIC INFO</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Model Year</td>
+                                                    @if (Model.report.basicInfo.year != null)
+                                                    {
+                                                        <td>@Model.report.basicInfo.year</td>
+                                                    }
+                                                </tr>
+                                                <tr>
+                                                    <td>No. of Owners</td>
+                                                    <td>4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>KMs Driven</td>
+                                                    <td>30,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fuel Type</td>
+                                                    <td>Gas</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <!--Technical-Specification-Table-->
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">Technical Specification</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Engine Type</td>
+                                                    <td>TDCI Diesel Engine</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Engine Description</td>
+                                                    <td>1.5KW</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>No. of Cylinders</td>
+                                                    <td>4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mileage-City</td>
+                                                    <td>22.4kmpl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mileage-Highway</td>
+                                                    <td>25.83kmpl</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fuel Tank Capacity</td>
+                                                    <td>40 (Liters)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Seating Capacity</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Transmission Type</td>
+                                                    <td>Manual</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Accessories -->
+                                <div role="tabpanel" class="tab-pane" id="accessories">
+                                    <!--Accessories-->
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Accessories</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Air Conditioner</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>AntiLock Braking System</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Power Steering</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Power Windows</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CD Player</td>
+                                                <td><i class="fa fa-close" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Leather Seats</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Central Locking</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Power Door Locks</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Brake Assist</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Driver Airbag</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Passenger Airbag</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Crash Sensor</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Engine Check Warning</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Automatic Headlamps</td>
+                                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Vehicle-Video-->
+
+                    </div>
+                    <!-- End of Pictures-->
                 </div>
 
                 <!--Side-Bar-->
@@ -644,19 +814,19 @@
                                     <tbody>
                                         <tr>
                                             <td>Concours</td>
-                                            <td>$18,400</td>
+                                            <td>NA</td>
                                         </tr>
                                         <tr>
                                             <td>Excellent</td>
-                                            <td>$7,600</td>
+                                            <td>NA</td>
                                         </tr>
                                         <tr>
                                             <td>Good</td>
-                                            <td>$5,400</td>
+                                            <td>NA</td>
                                         </tr>
                                         <tr>
                                             <td>Fair</td>
-                                            <td>$3,100</td>
+                                            <td>NA</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -667,14 +837,7 @@
                 </div>
             </div>
             <!--/Similar-Cars-->
-            <!--Similar-Cars-->
-            <div class="similar_cars">
-                <h3>KBB</h3>
-                <div class="row">
-                    &nbsp;
-                </div>
-            </div>
-            <!--/Similar-Cars-->
+           
             <!--Similar-Cars-->
             <div class="similar_cars">
                 <h3>Certificate</h3>
@@ -703,7 +866,7 @@
     </section>
     <!--/Listing-detail-->
     <!--Brands-->
-    <section class="brand-section gray-bg">
+    <section class="brand-section gray-bg" style="display:none;">
         <div class="container">
             <div class="brand-hadding">
                 <h5>Photos</h5>
@@ -754,15 +917,19 @@
                         <a href="#">
                             @if (Model.report.photos != null && Model.report.photos.Count >= 7)
                             {
-                                <img height="100" src="@Model.report.photos[6].photo" class="img-responsive" alt="image" />
-                            }
-                        </a>
+                                <a href="https://s3.amazonaws.com/aap-public/@Model.report.photos[6].photo">
+                                    <img height="100" src="@Model.report.photos[6].photo" class="img-responsive" alt="image" />
+                                    </a>
+                                    }
+                                </a>
                     </div>
                     <div>
                         <a href="#">
                             @if (Model.report.photos != null && Model.report.photos.Count >= 8)
                             {
+                            <a href="https://s3.amazonaws.com/aap-public/@Model.report.photos[7].photo">
                                 <img height="100" src="@Model.report.photos[7].photo" class="img-responsive" alt="image" />
+                            </a>
                             }
                         </a>
                     </div>
