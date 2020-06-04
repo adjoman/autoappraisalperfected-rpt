@@ -26,7 +26,7 @@ namespace testAAP.DB
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM customer", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT Top 5 * FROM customer", conn);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
